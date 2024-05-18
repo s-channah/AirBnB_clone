@@ -1,14 +1,10 @@
-A clone of actual AirBnB website (The Console)
-AUTHORS
-git
-LICENSE
-README.md
-TOC
-URM
-AUTHORS
-LICENSE
-models
-README.md
-tests
-TOC
-URM
+A clone of actual AirBnB website (AirBnB_clone) Repository :
+> - 1 - AUTHORS
+> - 2 - git
+> - 3 - LICENSE
+> - 4 - models
+> - 5 - README.md
+> - 6 - tests
+> - 7 - TOC
+> - 8 - TOC.md
+> - 9 - URM
