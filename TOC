@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#Get the namer of the current folder
+folder_name=$(basename "$(pwd)")
+
+echo "This is the Table of Contents of $folder_name Repository: " > TOC.md
+counter=0
+for item in *; do
+	counter=$((counter + 1))
+	echo "$counter - $item" >> TOC.md
+done
