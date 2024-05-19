@@ -6,6 +6,7 @@ import unittest
 from models.base_model import BaseModel
 from models.state import State
 
+
 class TestState(unittest.TestCase):
     """
     Class to test state
@@ -40,6 +41,7 @@ class TestState(unittest.TestCase):
 
         standard_output = "[State] ({}) {}".format(state.id, state.__dict__)
         self.assertEqual(str(state), standard_output)
+
 
 if __name__ == '__main__':
     unittest.main()

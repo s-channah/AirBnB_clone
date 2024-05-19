@@ -6,6 +6,7 @@ import unittest
 from models.base_model import BaseModel
 from models.user import User
 
+
 class TestUser(unittest.TestCase):
     """
     Class to test user
@@ -53,6 +54,6 @@ class TestUser(unittest.TestCase):
         standard_output = "[User] ({}) {}".format(user.id, user.__dict__)
         self.assertEqual(str(user), standard_output)
 
+
 if __name__ == '__main__':
     unittest.main()
-

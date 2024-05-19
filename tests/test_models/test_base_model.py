@@ -61,7 +61,8 @@ class TestBaseModel(unittest.TestCase):
 
     def test_init_with_kwargs(self):
         """
-        This is methods checks a pass of kwargs and how it is impacted in the run
+        This is methods checks a pass of kwargs
+        and how it is impacted in the run
         """
         test_id = "{}".format(generate_id.uuid4())
         str_date_format = "{}".format(datetime.now().isoformat())
@@ -84,6 +85,7 @@ class TestBaseModel(unittest.TestCase):
         new_inst = BaseModel(None)
         attributes = ["id", "created_at", "updated_at", "to_dict", "save"]
         self.assertTrue(all(hassattr(new_inst, attr) for attr in attributes))
+
 
 if __name__ == "__main__":
     unittest.main()
