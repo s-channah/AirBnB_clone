@@ -70,7 +70,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, arg):
         """
-        Process to exit the console
+        Quit command to exit program
         """
         return True
 
