@@ -15,13 +15,15 @@ from models import FileStorage
 from models import storage
 import json
 
+
 class HBNBCommand(cmd.Cmd):
     """
     This is a class for the command interpreter
     """
 
     prompt = "(hbnb) "
-    class_identifier = ("BaseModel", "User", "Amenity", "Place", "City", "State", "Review")
+    class_identifier = ("BaseModel", "User", "Amenity",
+                        "Place", "City", "State", "Review")
 
     def precmd(self, line):
         """
@@ -145,7 +147,8 @@ class HBNBCommand(cmd.Cmd):
             if args[0] in HBNBCommand.class_identifier:
                 key = args[0] + "." + args[1]
                 if key in storage.all():
-                    setattr(storage.all()[key], args[2], str(arg[3].strip('"')))
+                    setattr(storage.all()[key], args[2],
+                            str(arg[3].strip('"')))
                     storage.save()
                 else:
                     print("** No instance Found **")

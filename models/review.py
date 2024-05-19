@@ -4,6 +4,7 @@ Class Reviw inherits from the base model.
 """
 from models.base_model import BaseModel
 
+
 class Review(BaseModel):
     """
     This is a class Review that inheritsq from the base model

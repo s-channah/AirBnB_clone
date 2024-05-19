@@ -6,6 +6,7 @@ import uuid
 from datetime import datetime
 from models import storage
 
+
 class BaseModel:
     """
     Parent Class BaseModel that defines all common attributes
@@ -20,7 +21,7 @@ class BaseModel:
             for key, val in kwargs.items():
                 if key == "__class__":
                     continue
-                if key == "created_at" or key  == "updated_at":
+                if key == "created_at" or key == "updated_at":
                     setattr(self, key, (datetime.fromisoformat(val)))
                 else:
                     setattr(self, key, val)
@@ -46,7 +47,7 @@ class BaseModel:
 
     def to_dict(self):
         """
-        Returns a dictionary containing all jkeys/values pairs 
+        Returns a dictionary containing all jkeys/values pairs
         of the __dict__ of the instance
         """
         attributes = {}

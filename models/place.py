@@ -4,11 +4,12 @@ The Class Place that inherits from the BaseModel
 """
 from models.base_model import BaseModel
 
+
 class Place(BaseModel):
     """
     This is the class Place that inherits from the basemodel
     """
-    city_id =""
+    city_id = ""
     user_id = ""
     name = ""
     description = ""
