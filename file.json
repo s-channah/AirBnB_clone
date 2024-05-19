@@ -1,1 +1,1 @@
-{"BaseModel.dabb3f53-9ed2-4b59-be57-ef43c2e046e6": {"id": "dabb3f53-9ed2-4b59-be57-ef43c2e046e6", "__class__": "BaseModel", "created_at": "2024-05-19T11:38:18.478243", "updated_at": "2024-05-19T11:38:18.478249", "name": "My_First_Model", "my_number": 89}}
+{"User.1447d577-1980-47a6-9bdc-fb331bf1c94d": {"id": "1447d577-1980-47a6-9bdc-fb331bf1c94d", "__class__": "User", "created_at": "2024-05-19T14:52:20.218957", "updated_at": "2024-05-19T14:52:20.218963"}}

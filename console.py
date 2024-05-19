@@ -119,6 +119,7 @@ class HBNBCommand(cmd.Cmd):
         """
         args = arg.split()
         if len(args) >= 2:
+            print(f"{args[0]}, {args[-1]}")
             if args[0] not in HBNBCommand.class_identifier:
                 print("** class doesn't exist **")
             else:
@@ -128,6 +129,8 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     print("** no instance found **")
         elif len(args) == 1:
+            print("here now == 1")
+            print(args[0])
             if args[0] not in HBNBCommand.class_identifier:
                 print("** class doesn't exist **")
             else:
