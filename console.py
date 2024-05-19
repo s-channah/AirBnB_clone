@@ -13,18 +13,12 @@ from models.state import State
 from models.amenity import Amenity
 from models import FileStorage
 from models import storage
-import re
 import json
 
 class HBNBCommand(cmd.Cmd):
     """
     This is a class for the command interpreter
     """
-    def this(self):
-        """
-        This is the this func
-        """
-        return
 
     prompt = "(hbnb) "
     class_identifier = ("BaseModel", "User", "Amenity", "Place", "City", "State", "Review")
@@ -32,6 +26,7 @@ class HBNBCommand(cmd.Cmd):
     def precmd(self, line):
         """
         This is the access to the console
+        line: this is the input command/argurement
         """
         if not line:
             pass
@@ -64,7 +59,7 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) == 0:
             print("** class name missing **")
             return
-        if arg.strp() in HBNBCommand.class_identifier:
+        if arg.strip() in HBNBCommand.class_identifier:
             obj = eval(arg.strip())()
             storage.save()
             print(obj.id)

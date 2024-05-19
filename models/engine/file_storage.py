@@ -27,13 +27,13 @@ class FileStorage:
         Returns a dictionary of __objects
         class.id as key and obj as value/class
         """
-        return fileStorage.__objects
+        return FileStorage.__objects
 
     def save(self):
         """
         This method adds a new object to the storage
         """
-        dict_ = {k: v.to_dict() for k, v in FileStorage.__object.items()}
+        dict_ = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
         with open(FileStorage.__file_path, "w", encoding="utf-8") as json_file:
             json.dump(dict_, json_file)
 
