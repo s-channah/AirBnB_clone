@@ -1,0 +1,10 @@
+#!/bin/bash
+# Get the name of the PROJECT
+project_name=$(basename "$(pwd)")
+
+echo "A clone of actual AirBnB website ($project_name) Repository :" > README.md
+counter=0
+for item in *; do
+	counter=$((counter + 1))
+	echo "> - $counter - $item" >> README.md
+done	

@@ -6,7 +6,7 @@ import uuid
 from datetime import datetime
 from models import storage
 
-clase BaseModel:
+class BaseModel:
     """
     Parent Class BaseModel that defines all common attributes
     and Methods for other classes
@@ -18,7 +18,7 @@ clase BaseModel:
         """
         if kwargs:
             for key, val in kwargs.items():
-                if key = "__class__":
+                if key == "__class__":
                     continue
                 if key == "created_at" or key  == "updated_at":
                     setattr(self, key, (datetime.fromisoformat(val)))

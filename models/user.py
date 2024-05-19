@@ -2,7 +2,7 @@
 """
 This is the Class Module for user that inherits from BaseModel
 """
-from model.base_model import BaseModel
+from models.base_model import BaseModel
 
 class User(BaseModel):
     """
