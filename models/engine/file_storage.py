@@ -7,6 +7,7 @@ afterxwards into instances
 import json
 import os.path
 
+
 class FileStorage:
     """
     File Storage Class
@@ -39,7 +40,7 @@ class FileStorage:
 
     def new(self, obj):
         """
-        Adds in __objects the obj with key 
+        Adds in __objects the obj with key
         <obj class name>.id
         """
         class_name = obj.__class__.__name__
@@ -57,7 +58,7 @@ class FileStorage:
         from models.place import Place
         from models.city import City
         from models.amenity import Amenity
-        
+
         my_classes = {"BaseModel": BaseModel,
                       "User": User,
                       "State": State,
@@ -74,8 +75,8 @@ class FileStorage:
         Returns ll objs saved in file
         """
         try:
-            with open(FileStorage.__file_path, "r") as file:
-                dict_ = json.load(file)
+            with open(FileStorage.__file_path, "r") as file_in:
+                dict_ = json.load(file_in)
                 for k, v in dict__.items():
                     FileStorage.__objects[k] = my_classes[v["__class__"]](**v)
         except Exception:
@@ -84,6 +85,5 @@ class FileStorage:
     def destroy(self, key):
         if key in FileStorage.__objects:
             del (FileStorage.__objects[key])
-        with open(FileStorage.__file_path, "w") as file:
-            json.dump(FileStorage.__objects, file)
-                    
+        with open(FileStorage.__file_path, "w") as file_out:
+            json.dump(FileStorage.__objects, file_out)

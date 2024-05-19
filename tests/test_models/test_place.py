@@ -39,9 +39,11 @@ class TestPlace(unittest.TestCase):
         """
         Test of the place instancr hass all required attributes
         """
-        place = Place(city_id="37", user_id="451", name="Accord", description="Description",
-                number_rooms=1, number_bathrooms=1, max_guest=2, price_per_night=100,
-                latitude=3.124, longitude=32.124, ametity_ids=[0, 1, 2])
+        place = Place(city_id="37", user_id="451", name="Accord",
+                      description="Description", number_rooms=1,
+                      number_bathrooms=1, max_guest=2,
+                      price_per_night=100, latitude=3.124,
+                      longitude=32.124, ametity_ids=[0, 1, 2])
         self.assertEqual(place.city_id, "37")
         self.assertEqual(place.user_id, "451")
         self.assertEqual(place.name, "Accord")
