@@ -66,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
             print(obj.id)
         else:
-            print("** class name does not exist **")
+            print("** class doesn't exist **")
 
     def do_quit(self, arg):
         """
