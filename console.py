@@ -77,6 +77,7 @@ class HBNBCommand(cmd.Cmd):
         """
         method empty
         """
+        print(" ")
         pass
 
     def do_count(self, arg):
