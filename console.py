@@ -51,6 +51,7 @@ class HBNBCommand(cmd.Cmd):
         """
         EOF command to Exit program
         """
+        print(" ")
         return True
 
     def do_create(self, arg):
@@ -77,7 +78,6 @@ class HBNBCommand(cmd.Cmd):
         """
         method empty
         """
-        print(" ")
         pass
 
     def do_count(self, arg):
