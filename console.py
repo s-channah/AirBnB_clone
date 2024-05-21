@@ -61,9 +61,10 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) == 0:
             print("** class name missing **")
             return
-        if arg.strip() in HBNBCommand.class_identifier:
-            obj = eval(arg.strip())()
-            storage.save()
+        args = arg.split()
+        if args[0] in HBNBCommand.class_identifier:
+            obj = storage.classes()[args[0]]()
+            obj.save()
             print(obj.id)
         else:
             print("** class doesn't exist **")
@@ -120,18 +121,17 @@ class HBNBCommand(cmd.Cmd):
         """
         args = arg.split()
         if len(args) >= 2:
-            print(f"{args[0]}, {args[-1]}")
-            if args[0] not in HBNBCommand.class_identifier:
+            if args[1] not in HBNBCommand.class_identifier:
                 print("** class doesn't exist **")
             else:
-                key = args[0] + args[1]
+                keys = args[0].replace("(",
+                                       "").replace('"', '').replace("'", "")
+                key = args[1] + "." + keys
                 if key in storage.all():
                     print(storage.all().get(key))
                 else:
                     print("** no instance found **")
         elif len(args) == 1:
-            print("here now == 1")
-            print(args[0])
             if args[0] not in HBNBCommand.class_identifier:
                 print("** class doesn't exist **")
             else:
