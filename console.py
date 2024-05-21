@@ -192,16 +192,20 @@ class HBNBCommand(cmd.Cmd):
         """
         args = arg.split()
         if len(args) >= 2:
-            if args[0] in HBNBCommand.class_identifier:
-                key = args[0] + "." + args[1]
+            if args[1] in HBNBCommand.class_identifier:
+                keys = args[0].replace("(",
+                                       "").replace('"', '').replace("'", "")
+                key = args[1] + "." + keys
                 if key in storage.all():
-                    storage.destroy(key)
+                    obj = storage.all()
+                    del obj[key]
+                    storage.save()
                 else:
                     print("** no instance found **")
             else:
                 print("** class doesn't exist **")
         elif len(args) == 1:
-            if args[0] in HBNBCommand.class_identifier:
+            if args[1] in HBNBCommand.class_identifier:
                 print("** instance id missing **")
             else:
                 print("** class doesn't exist **")
