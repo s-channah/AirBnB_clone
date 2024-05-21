@@ -107,7 +107,7 @@ class HBNBCommand(cmd.Cmd):
                         obj_list.append(str(value))
                 print(obj_list)
             else:
-                print("** Class doesn't exist **")
+                print("** class doesn't exist **")
         elif len(args) == 0:
             for values in storage.all().values():
                 obj_list.append(str(values))
@@ -154,34 +154,34 @@ class HBNBCommand(cmd.Cmd):
                             str(arg[3].strip('"')))
                     storage.save()
                 else:
-                    print("** No instance Found **")
+                    print("** no instance found **")
             else:
-                print("** Class doesn't exist **")
+                print("** class doesn't exist **")
         elif len(args) == 3:
             if args[0] in HBNBCommand.class_identifier:
                 key = args[0] + "." + args[1]
                 if key in storage.all():
-                    print("** Value missing **")
+                    print("** value missing **")
                 else:
                     print("** no instance found **")
             else:
-                print("** Class doesn't exist **")
+                print("** class doesn't exist **")
         elif len(args) == 2:
             if args[0] in HBNBCommand.class_identifier:
                 key = args[0] + "." + args[1]
                 if key in storage.all():
-                    print("** Attribute name missing **")
+                    print("** attribute name missing **")
                 else:
                     print("** No instances found **")
             else:
-                print("** Class doesn't Exist **")
+                print("** class doesn't exist **")
         elif len(args) == 1:
             if args[0] in HBNBCommand.class_identifier:
                 print("** instance id missing **")
             else:
                 print("** class doesn't exist **")
         else:
-            print("** Class name Missing **")
+            print("** class name missing **")
 
     def do_destroy(self, arg):
         """
@@ -199,12 +199,12 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     print("** no instance found **")
             else:
-                print("** Class doesn't exist **")
+                print("** class doesn't exist **")
         elif len(args) == 1:
             if args[0] in HBNBCommand.class_identifier:
                 print("** instance id missing **")
             else:
-                print("** Class doesn't exist **")
+                print("** class doesn't exist **")
         else:
             print("** class name missing **")
 
