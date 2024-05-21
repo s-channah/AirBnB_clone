@@ -121,6 +121,12 @@ class HBNBCommand(cmd.Cmd):
         """
         args = arg.split()
         if len(args) >= 2:
+            if args[0] == "BaseModel":
+                key = args[0] + "." + args[1]
+                if key not in storage.all():
+                    print("** no instance found **")
+                else:
+                    print(storage.all().get(key))
             if args[1] not in HBNBCommand.class_identifier:
                 print("** class doesn't exist **")
             else:
