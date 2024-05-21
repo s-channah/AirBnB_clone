@@ -147,8 +147,11 @@ class HBNBCommand(cmd.Cmd):
         """
         args = arg.split()
         if len(args) >= 4:
-            if args[0] in HBNBCommand.class_identifier:
-                key = args[0] + "." + args[1]
+            if args[-1] in HBNBCommand.class_identifier:
+                keys = args[0].replace("(",
+                                       "").replace('"', '').replace("'", "")
+                key = args[-1] + "." + keys.replace(',', '')
+                print(key)
                 if key in storage.all():
                     setattr(storage.all()[key], args[2],
                             str(arg[3].strip('"')))
@@ -159,7 +162,10 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
         elif len(args) == 3:
             if args[0] in HBNBCommand.class_identifier:
-                key = args[0] + "." + args[1]
+                keys = args[0].replace("(",
+                                       "").replace('"', '').replace("'", "")
+                key = args[1] + "." + keys
+                print(key)
                 if key in storage.all():
                     print("** value missing **")
                 else:
