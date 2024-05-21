@@ -151,7 +151,6 @@ class HBNBCommand(cmd.Cmd):
                 keys = args[0].replace("(",
                                        "").replace('"', '').replace("'", "")
                 key = args[-1] + "." + keys.replace(',', '')
-                print(key)
                 if key in storage.all():
                     setattr(storage.all()[key], args[2],
                             str(arg[3].strip('"')))
@@ -165,7 +164,6 @@ class HBNBCommand(cmd.Cmd):
                 keys = args[0].replace("(",
                                        "").replace('"', '').replace("'", "")
                 key = args[1] + "." + keys
-                print(key)
                 if key in storage.all():
                     print("** value missing **")
                 else:
